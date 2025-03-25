@@ -1,0 +1,14 @@
+## 클라이언트 랜더링은 컴포넌트로 최소화 하기
+
+## 서버사이드랜더링을 사용하려면 함수에 async 넣고 바로 요청
+    export default async function NewsPage() {
+        //서버 사이드 랜더링
+        const response = await fetch("http://localhost:8080/news");
+        if (!response.ok) {
+        throw new Error("데이터 패치 실패");
+        }
+        const news = await response.json();
+    }
+
+## 로딩페이지를 같은 폴더 옆에 놓으면 별도의 세팅없이
+로딩페이지를 보여준다.
