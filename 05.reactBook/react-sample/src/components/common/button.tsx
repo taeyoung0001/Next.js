@@ -7,13 +7,14 @@ type ButtonProps = {
   className?: "circle" | "square";
   title?: string;
   onClick?: () => void;
+  type?: "submit" | "button" | "reset";
 };
 
 const Button = (props: ButtonProps) => {
-  const { className, title, onClick } = props;
+  const { className, title, onClick, type } = props;
   return (
     <div>
-      <button onClick={onClick} className={cx(`${className}`)}>
+      <button type={type} onClick={onClick} className={cx(`${className}`)}>
         {title}
       </button>
     </div>
